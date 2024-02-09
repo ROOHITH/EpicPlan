@@ -2,10 +2,10 @@
   "name": "epicplan",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "Server.js",
   "scripts": {
     "install-server": "npm install",
-    "start-server": "node server.js",
+    "start-server": "node Server.js",
     "install-client": "cd FrontEnd && npm install",
     "build-client": "cd FrontEnd && npm run build",
     "start-client": "cd FrontEnd && npm run start"
