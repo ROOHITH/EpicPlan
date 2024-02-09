@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js",
-    "client": "cd FrontEnd && npm install && npm run build",
-    "build": "cd FrontEnd && npm install && npm run build && cd .. && npm install && npm start",
+   
+    "start": "node server.js",
+    "build": "cd FrontEnd && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
