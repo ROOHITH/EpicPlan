@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-   
-    "start": "node server.js",  
-    "install": "npm install",
-    "build": "npm run install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install-server": "npm install",
+    "start-server": "node server.js",
+    "install-client": "cd FrontEnd && npm install",
+    "build-client": "cd FrontEnd && npm run build",
+    "start-client": "cd FrontEnd && npm run start"
   },
   "keywords": [],
   "author": "",
