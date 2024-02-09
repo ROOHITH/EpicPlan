@@ -14,16 +14,18 @@ const db = require("./DbConn");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 
+const isProduction = process.env.NODE_ENV === 'production';
 
 // Enable CORS for all routes using the cors middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // Update the origin to match your React app's URL
+    origin: isProduction ? 'https://epicplan.onrender.com' : 'http://localhost:5173',
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 // Use the cookie parser middleware
 app.use(cookieParser());
 app.use(express.json());

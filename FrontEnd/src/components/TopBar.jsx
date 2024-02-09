@@ -18,7 +18,10 @@ import Logout from "@mui/icons-material/Logout";
 
 const TopBar = ({ children, removeCookie }) => {
     const navigate = useNavigate();
-     const backendUrl = 'http://localhost:3000';
+    // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
     const LogoutFunc = () => {
       
       removeCookie("token");
@@ -43,7 +46,10 @@ const TopBar = ({ children, removeCookie }) => {
 
  function AccountMenu({ LogoutFunc }) {
     const [user, setUser] = useState(null);
-    const backendUrl = 'http://localhost:3000';
+   // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
     useEffect(() => {
       const fetchUserProfile = async () => {
         try {

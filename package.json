@@ -5,10 +5,16 @@
   "main": "Server.js",
   "scripts": {
     "install-server": "npm install",
-    "start-server": "node Server.js",
+    "start-server": "node server.js",
     "install-client": "cd FrontEnd && npm install",
     "build-client": "cd FrontEnd && npm run build",
-    "start-client": "cd FrontEnd && npm run start"
+    "start-client": "cd FrontEnd && npm run start",
+    
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd FrontEnd && npm install && npm run dev",
+    "build": "cd FrontEnd && npm install && npm run build && cd .. && npm install && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

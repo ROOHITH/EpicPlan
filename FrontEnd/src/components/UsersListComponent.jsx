@@ -24,7 +24,10 @@ const UserListDialoge = ({
   currentBoard,
   setDummyKey,
 }) => {
-   const backendUrl = 'http://localhost:3000';
+  // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
   const [userList, setUserList] = useState([]);
   const [boardUsers, setBoardUsers] = useState([]);
   const [selectedUsers, setSelectedUsers] = useState([]);

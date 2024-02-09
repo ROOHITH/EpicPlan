@@ -16,7 +16,10 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 
 const Signup = () => {
-   const backendUrl = 'http://localhost:3000';
+  // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark";
 

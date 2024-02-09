@@ -16,7 +16,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
-   const backendUrl = 'http://localhost:3000';
+  // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",

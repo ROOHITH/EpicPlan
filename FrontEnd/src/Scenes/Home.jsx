@@ -42,8 +42,12 @@ const Home = ({ isDarkMode, setIsDarkMode }) => {
   const { showSuccessSnackbar, showErrorSnackbar } = useSnackbarWithDefaults();
   const navigate = useNavigate();
 
-   const backendUrl = 'http://localhost:3000';
-
+  // Access the environment variables with process.env
+const backendUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_BACKEND_URL_PROD
+  : process.env.REACT_APP_BACKEND_URL_DEV;
+  console.log('Environment:', process.env.NODE_ENV);
+  console.log('Backend URL:', backendUrl);
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [username, setUsername] = useState("");
   const [listItems, setListItems] = useState([]);
