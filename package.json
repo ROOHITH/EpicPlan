@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
    
-    "start": "node server.js",
-    "build": "cd FrontEnd && npm install && npm run build",
+    "start": "node server.js",  
+    "install": "npm install",
+    "build": "npm run install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
