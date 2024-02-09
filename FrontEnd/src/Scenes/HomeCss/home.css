@@ -1,0 +1,261 @@
+.SideBar {
+  height: 100vh;
+  width: 250px;
+  background-color: #2c2c38;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Set position relative for absolute positioning */
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.Title {
+  margin-top: 0; /* Remove default margin */
+  padding: 10px; /* Add padding for spacing */
+  color: white; /* Set text color */
+}
+.ListBox {
+  flex-grow: 1;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* For Firefox */
+.ListBox::-webkit-scrollbar {
+  width: 2px;
+}
+
+.ListBox::-webkit-scrollbar-thumb {
+  background-color: #4caf50; /* Color of the scrollbar thumb */
+  border-radius: 2px; /* Rounded corners of the thumb */
+}
+
+/* For WebKit (Chrome, Safari) */
+.ListBox {
+  scrollbar-width: thin;
+  scrollbar-color: #4caf50 transparent; /* Color of the scrollbar thumb and track */
+}
+
+.BottomBox {
+  padding: 30px 18px 30px 18px;
+
+  width: 100%; /* Take full width */
+}
+
+.bgOf {
+  background-color: #21212d;
+}
+.listItem {
+  padding: 5px 0px 5px 0px !important;
+}
+.ListItemText {
+  font-size: 10px !important;
+}
+.listItem {
+  padding: 8px 16px; /* Adjust padding as needed */
+}
+
+.listItem .MuiListItemAvatar-root {
+  min-width: 16px; /* Adjust minimum width of Avatar */
+}
+
+.listItem .MuiAvatar-root {
+  width: 14px; /* Adjust Avatar size */
+  height: 14px;
+}
+
+.listItem .ListItemText-root {
+  margin-left: 16px; /* Adjust margin as needed */
+}
+
+.listItem .MuiSvgIcon-root {
+  font-size: 18px; /* Adjust icon size */
+}
+.CreateBoardButton {
+  position: sticky;
+  bottom: 10px; /* Adjust the distance from the bottom */
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CreateBoardButton:hover {
+  background-color: #45a049;
+}
+.conatiner {
+  height: 100%;
+  width: calc(100vw - 250px); /* Subtract the sidebar width */
+}
+.BoardBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TopBar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  align-self: baseline;
+  display: flex;
+  flex-direction: row;
+  /* Add more styles as needed */
+}
+.TopBar .sec1 {
+  flex-grow: 1;
+}
+.filterBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.filterBox > Box {
+  display: flex;
+  flex-flow: row-reverse;
+}
+.iconBox {
+  display: flex;
+  flex-direction: row;
+  color: violet;
+}
+.iconBox_2 {
+  display: flex;
+  flex-direction: row;
+  color: orange;
+}
+.iconBox_3 {
+  display: flex;
+  flex-direction: row;
+  color: #00c853;
+}
+.iconBox_3,.iconBox_2,.iconBox{
+  padding: 0px !important;
+}
+
+/* home.css */
+.SideBar {
+  /* Your existing styles for the sidebar */
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., mobile) */
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+}
+
+/* Add new styles for the top bar */
+.TopBar {
+  /* Your existing styles for the top bar */
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., mobile) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.conatiner {
+  /* Your existing styles for the main content container */
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., mobile) */
+    margin-left: 0;
+  }
+}
+
+.gridView {
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., mobile) */
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 769px) {
+  .SideBar.Closed .Title,
+  .SideBar.Closed .ListBox,
+  .SideBar.Closed .BoardBox,
+  .SideBar.Closed .BottomBox {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .Title,
+  .ListBox,
+  .BoardBox,
+  .BottomBox {
+    display: block;
+  }
+
+  .SideBar.Closed .Title,
+  .SideBar.Closed .ListBox,
+  .SideBar.Closed .BoardBox,
+  .SideBar.Closed .BottomBox {
+    display: none;
+  }
+}
+/* Add other responsive styles as needed */
+/* home.css */
+.SideBar {
+  /* Existing styles for the sidebar */
+
+  &.Open {
+    width: 250px; /* Adjust the width as needed */
+  }
+
+  &.Closed {
+    width: 0;
+    overflow: hidden;
+  }
+
+  /* Add transition for smoother animation */
+  transition: width 0.5s;
+}
+
+/* Add styles for the toggle button */
+.ToggleSidebarButton {
+ /* Adjust as needed */
+ padding: 0px !important;
+ display: flex !important;;
+}
+.ToggleSidebarButton {
+  @media (max-width: 768px) {
+    padding: 0px ;
+    margin-left: -21px;
+  }
+}
+/* home.css */
+
+/* ... (existing styles) */
+
+.conatiner {
+  /* Your existing styles for the main content container */
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., mobile) */
+    margin-left: 40px; /* Adjust this as needed */
+  }
+
+  @media (min-width: 769px) {
+    /* Set left margin to the width of the closed sidebar when it's not in mobile view */
+    margin-left: 0px; /* Adjust this as needed */
+    
+  }
+}
+
